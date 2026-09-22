@@ -22,334 +22,64 @@
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
-
     body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+      margin: 0; font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6;
     }
-
-    .container {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 20px 18px 70px;
-    }
-
+    .container { max-width: 1180px; margin: 0 auto; padding: 20px 18px 60px; }
     .topbar {
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      color: white;
-      box-shadow: var(--shadow);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      color: white; position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow);
     }
-
-    .topbar-inner {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 16px 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .brand {
-      font-size: 1.2rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-    }
-
-    .top-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      appearance: none;
-      border: none;
-      border-radius: 999px;
-      padding: 10px 16px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      transition: 0.2s ease;
-      display: inline-block;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-    }
-
+    .topbar-inner { max-width: 1180px; margin: 0 auto; padding: 16px 18px; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .brand { font-size: 1.2rem; font-weight: 700; letter-spacing: 0.04em; }
+    .top-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn { appearance: none; border: none; border-radius: 999px; padding: 10px 16px; font-size: 0.95rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; white-space: nowrap; }
+    .btn-primary { background: var(--primary); color: white; }
     .btn-primary:hover { background: var(--primary-dark); }
-
-    .btn-light {
-      background: var(--primary-soft);
-      color: var(--primary-dark);
-      border: 1px solid rgba(10, 61, 145, 0.15);
-    }
-
-    .btn-light:hover { background: #d5e9ff; }
+    .btn-light { background: var(--primary-soft); color: var(--primary-dark); border: 1px solid rgba(10,61,145,0.15); }
+    .btn-light:hover { background: #d8e9ff; }
 
     .hero {
       background: linear-gradient(135deg, rgba(10, 61, 145, 0.96), rgba(19, 90, 173, 0.9));
-      color: white;
-      border-radius: 22px;
-      padding: 38px 26px 30px;
-      box-shadow: var(--shadow);
-      margin-top: 28px;
-      margin-bottom: 24px;
+      color: white; border-radius: 22px; padding: 38px 26px 30px; margin-top: 28px; box-shadow: var(--shadow);
     }
-
-    .hero h1 {
-      margin: 0 0 10px;
-      font-size: clamp(2rem, 3vw, 3.1rem);
-      line-height: 1.15;
-    }
-
-    .hero p {
-      margin: 0;
-      max-width: 760px;
-      color: rgba(255,255,255,0.9);
-      font-size: 1.04rem;
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 22px;
-    }
-
-    .hero-badge {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.18);
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-    }
-
-    .nav-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 14px;
-      margin: 28px 0 20px;
-    }
-
-    .nav-item {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 18px 16px;
-      box-shadow: 0 10px 18px rgba(17, 32, 68, 0.04);
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 700;
-      display: block;
-      transition: 0.2s ease;
-    }
-
-    .nav-item:hover {
-      transform: translateY(-2px);
-      border-color: rgba(45, 127, 249, 0.3);
-      box-shadow: 0 12px 20px rgba(17, 32, 68, 0.08);
-    }
-
-    .section {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: 0 10px 18px rgba(17, 32, 68, 0.04);
-      margin-top: 26px;
-      overflow: hidden;
-    }
-
-    .section-header {
-      background: linear-gradient(180deg, rgba(10, 61, 145, 0.05), transparent);
-      border-bottom: 1px solid var(--line);
-      padding: 20px 22px 16px;
-    }
-
-    .section-header h2 {
-      margin: 0;
-      font-size: clamp(1.3rem, 2vw, 2rem);
-      color: var(--primary-dark);
-    }
-
-    .section-body {
-      padding: 18px 22px 22px;
-    }
-
-    .lang-switcher {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 18px 0 0;
-    }
-
-    .lang-btn {
-      background: white;
-      color: var(--primary-dark);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 8px 14px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .lang-btn.active {
-      background: var(--primary);
-      color: white;
-      border-color: var(--primary);
-    }
-
+    .hero h1 { margin: 0 0 10px; font-size: clamp(2rem, 3vw, 3.3rem); line-height: 1.15; }
+    .hero p { margin: 0; max-width: 760px; color: rgba(255,255,255,0.92); font-size: 1.05rem; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+    .hero-badge { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.18); padding: 8px 12px; border-radius: 999px; font-size: 0.9rem; }
+    .nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin: 28px 0 20px; }
+    .nav-item { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px 16px; box-shadow: 0 10px 18px rgba(17,32,68,0.04); text-decoration: none; color: var(--text); font-weight: 700; display: block; }
+    .nav-item:hover { transform: translateY(-2px); border-color: rgba(45,127,249,0.3); }
+    .section { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 10px 18px rgba(17,32,68,0.04); margin-top: 26px; overflow: hidden; }
+    .section-header { background: linear-gradient(180deg, rgba(10,61,145,0.05), transparent); border-bottom: 1px solid var(--line); padding: 20px 22px 16px; }
+    .section-header h2 { margin: 0; font-size: clamp(1.3rem, 2vw, 2rem); color: var(--primary-dark); }
+    .section-body { padding: 18px 22px 22px; }
+    .lang-switcher { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+    .lang-btn { background: white; color: var(--primary-dark); border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; font-weight: 700; cursor: pointer; }
+    .lang-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
     .lang-panel { display: none; }
     .lang-panel.active { display: block; }
-
-    .price-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-      margin-top: 18px;
-    }
-
-    .card {
-      background: linear-gradient(180deg, #f9fbff, #ffffff);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 18px 18px 16px;
-      min-height: 220px;
-      position: relative;
-    }
-
-    .card h3 {
-      margin: 0 0 10px;
-      color: var(--primary-dark);
-      font-size: 1.1rem;
-    }
-
-    .card p {
-      margin: 0 0 10px;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .price {
-      font-size: 1.7rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-top: 8px;
-      display: block;
-    }
-
-    .price small {
-      font-size: 0.75rem;
-      color: var(--muted);
-      font-weight: 600;
-    }
-
-    .card .tag {
-      display: inline-block;
-      background: var(--primary-soft);
-      color: var(--primary-dark);
-      border-radius: 999px;
-      padding: 5px 10px;
-      font-size: 0.73rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      overflow: hidden;
-      border-radius: 12px;
-      background: white;
-      border: 1px solid var(--line);
-      margin-top: 12px;
-    }
-
-    th, td {
-      text-align: left;
-      border-bottom: 1px solid var(--line);
-      padding: 12px 10px;
-      vertical-align: top;
-    }
-
-    th {
-      background: #f3f9ff;
-      color: var(--primary-dark);
-      font-size: 0.92rem;
-    }
-
+    .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 16px; margin-top: 18px; }
+    .card { background: linear-gradient(180deg, #f9fbff, #ffffff); border: 1px solid var(--line); border-radius: 14px; padding: 18px 18px 16px; min-height: 220px; }
+    .card h3 { margin: 0 0 10px; color: var(--primary-dark); font-size: 1.1rem; }
+    .card p { margin: 0 0 10px; color: var(--muted); font-size: 0.96rem; }
+    .price { font-size: 1.7rem; font-weight: 800; color: var(--primary); margin-top: 8px; display: block; }
+    .price small { font-size: 0.75rem; color: var(--muted); font-weight: 600; }
+    .tag { display: inline-block; background: var(--primary-soft); color: var(--primary-dark); border-radius: 999px; padding: 5px 10px; font-size: 0.73rem; font-weight: 700; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; background: white; border: 1px solid var(--line); margin-top: 12px; }
+    th, td { text-align: left; border-bottom: 1px solid var(--line); padding: 12px 10px; vertical-align: top; }
+    th { background: #f3f9ff; color: var(--primary-dark); }
     tr:last-child td { border-bottom: none; }
-
-    ul {
-      margin: 10px 0 0 18px;
-      padding: 0;
-      color: var(--text);
-    }
-
+    ul { margin: 10px 0 0 18px; padding: 0; }
     li { margin-bottom: 7px; }
-
-    .faq {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 14px;
-      margin-top: 16px;
-    }
-
-    .mini-box {
-      background: #f7fbff;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 14px 16px;
-    }
-
-    .mini-box h4 {
-      margin: 0 0 8px;
-      color: var(--primary-dark);
-      font-size: 1rem;
-    }
-
-    .note {
-      background: #eef7ff;
-      border-left: 4px solid var(--accent);
-      padding: 12px 14px;
-      border-radius: 10px;
-      color: var(--text);
-      margin-top: 16px;
-    }
-
-    .footer {
-      margin-top: 28px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.95rem;
-      padding-bottom: 20px;
-    }
-
-    @media (max-width: 700px) {
-      .hero { padding: 26px 18px 22px; }
-      .section-header, .section-body { padding-left: 16px; padding-right: 16px; }
-      table { display: block; overflow-x: auto; }
-    }
-
-    @media print {
-      .topbar, .nav-grid, .lang-switcher, .btn, .top-actions { display: none !important; }
-      body { background: white; }
-      .section { break-inside: avoid; }
-    }
+    .faq { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 16px; }
+    .mini-box { background: #f7fbff; border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+    .mini-box h4 { margin: 0 0 8px; color: var(--primary-dark); font-size: 1rem; }
+    .note { background: #eef7ff; border-left: 4px solid var(--accent); padding: 12px 14px; border-radius: 10px; margin-top: 16px; }
+    .footer { margin-top: 28px; text-align: center; color: var(--muted); font-size: 0.95rem; padding-bottom: 20px; }
+    @media (max-width:700px) { .hero { padding: 26px 18px 22px; } .section-header, .section-body { padding-left: 16px; padding-right: 16px; } table { display: block; overflow-x: auto; } }
+    @media print { .topbar, .nav-grid, .lang-switcher, .btn, .top-actions { display: none !important; } body { background: white; } }
   </style>
 </head>
 <body>
@@ -366,11 +96,7 @@
   <div class="container">
     <section class="hero">
       <h1>Software Development Pricing</h1>
-      <p>
-        Full-stack applications, business platforms, customer portals, dashboards,
-        OCR workflows, automation, and custom software solutions. Prices are in USD and
-        include development, user management, standard security, and backup setup for the agreed scope.
-      </p>
+      <p>Full-stack applications, business platforms, customer portals, dashboards, OCR workflows, automation, and custom software solutions. Prices are in USD and include development, user management, standard security, and backup setup for the agreed scope.</p>
       <div class="hero-meta">
         <span class="hero-badge">Full-stack development</span>
         <span class="hero-badge">Business software</span>
@@ -395,67 +121,23 @@
 
     <div id="en" class="lang-panel active">
       <section class="section" id="solutions">
-        <div class="section-header">
-          <h2>Main solutions</h2>
-        </div>
+        <div class="section-header"><h2>Main solutions</h2></div>
         <div class="section-body">
           <div class="price-grid">
-            <div class="card">
-              <span class="tag">Business</span>
-              <h3>Business Management Platform</h3>
-              <p>CRM, customers, workflows, dashboards, documents, administration, and internal operations.</p>
-              <span class="price">From $2,500</span>
-            </div>
-            <div class="card">
-              <span class="tag">Operations</span>
-              <h3>Workforce Management System</h3>
-              <p>Employees, tasks, permissions, work status, and internal process coordination.</p>
-              <span class="price">From $1,500</span>
-            </div>
-            <div class="card">
-              <span class="tag">Sales</span>
-              <h3>CRM System</h3>
-              <p>Customer relations, leads, opportunities, activity tracking, and business relationships.</p>
-              <span class="price">From $1,200</span>
-            </div>
-            <div class="card">
-              <span class="tag">Portal</span>
-              <h3>Customer Portal</h3>
-              <p>Secure customer access to information, documents, requests, and account details.</p>
-              <span class="price">From $1,500</span>
-            </div>
-            <div class="card">
-              <span class="tag">Automation</span>
-              <h3>OCR & Document Automation</h3>
-              <p>Extract useful data from images, documents, and scanned files to speed up digital workflows.</p>
-              <span class="price">From $800</span>
-            </div>
-            <div class="card">
-              <span class="tag">Career</span>
-              <h3>CV & Job Application Tracker</h3>
-              <p>CV management, workplace tracking, and activity history showing where each CV was sent.</p>
-              <span class="price">From $900</span>
-            </div>
-            <div class="card">
-              <span class="tag">Family</span>
-              <h3>Family Organization App</h3>
-              <p>Shared tasks, weekly meal planning, income tracking, and expense management.</p>
-              <span class="price">From $800</span>
-            </div>
-            <div class="card">
-              <span class="tag">Custom</span>
-              <h3>Custom Web Application</h3>
-              <p>Software designed around your specific business process, users, rules, and workflow.</p>
-              <span class="price">From $1,500</span>
-            </div>
+            <div class="card"><span class="tag">Business</span><h3>Business Management Platform</h3><p>CRM, customers, workflows, dashboards, documents, administration, and internal operations.</p><span class="price">From $2,500</span></div>
+            <div class="card"><span class="tag">Operations</span><h3>Workforce Management System</h3><p>Employees, tasks, permissions, work status, and internal process coordination.</p><span class="price">From $1,500</span></div>
+            <div class="card"><span class="tag">Sales</span><h3>CRM System</h3><p>Customer relations, leads, opportunities, activity tracking, and business relationships.</p><span class="price">From $1,200</span></div>
+            <div class="card"><span class="tag">Portal</span><h3>Customer Portal</h3><p>Secure customer access to information, documents, requests, and account details.</p><span class="price">From $1,500</span></div>
+            <div class="card"><span class="tag">Automation</span><h3>OCR & Document Automation</h3><p>Extract useful data from images, documents, and scanned files to speed up digital workflows.</p><span class="price">From $800</span></div>
+            <div class="card"><span class="tag">Career</span><h3>CV & Job Application Tracker</h3><p>CV management, workplace tracking, and activity history showing where each CV was sent.</p><span class="price">From $900</span></div>
+            <div class="card"><span class="tag">Family</span><h3>Family Organization App</h3><p>Shared tasks, weekly meal planning, income tracking, and expense management.</p><span class="price">From $800</span></div>
+            <div class="card"><span class="tag">Custom</span><h3>Custom Web Application</h3><p>Software designed around your specific business process, users, rules, and workflow.</p><span class="price">From $1,500</span></div>
           </div>
         </div>
       </section>
 
       <section class="section" id="features">
-        <div class="section-header">
-          <h2>Included in the project</h2>
-        </div>
+        <div class="section-header"><h2>Included in the project</h2></div>
         <div class="section-body">
           <ul>
             <li>Full-stack application development</li>
@@ -473,30 +155,21 @@
             <li>Initial post-launch support</li>
             <li>Basic technical documentation</li>
           </ul>
-          <div class="note">
-            The project price includes backup setup. Ongoing hosting, storage, monitoring, and maintenance may be charged separately through a maintenance plan or provider costs.
-          </div>
+          <div class="note">The project price includes backup setup. Ongoing hosting, storage, monitoring, and maintenance may be charged separately through a maintenance plan or provider cost.</div>
         </div>
       </section>
 
       <section class="section" id="automation">
-        <div class="section-header">
-          <h2>Functionality and automation pricing</h2>
-        </div>
+        <div class="section-header"><h2>Functionality and automation pricing</h2></div>
         <div class="section-body">
           <table>
-            <thead>
-              <tr>
-                <th>Functionality</th>
-                <th>Starting price</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Functionality</th><th>Starting price</th></tr></thead>
             <tbody>
               <tr><td>Simple form, field, or page</td><td>$100–$250</td></tr>
               <tr><td>Login, registration, or password reset</td><td>$200–$500</td></tr>
               <tr><td>User roles and permissions</td><td>$300–$800</td></tr>
               <tr><td>Admin dashboard section</td><td>$300–$900</td></tr>
-              <tr><td>Search, filtering, sorting</td><td>$150–$500</td></tr>
+              <tr><td>Search, filtering, and sorting</td><td>$150–$500</td></tr>
               <tr><td>Email notifications</td><td>$200–$600</td></tr>
               <tr><td>SMS / WhatsApp notifications</td><td>$400–$1,200+</td></tr>
               <tr><td>File upload and document storage</td><td>$300–$900</td></tr>
@@ -524,23 +197,12 @@
       </section>
 
       <section class="section" id="maintenance">
-        <div class="section-header">
-          <h2>Maintenance and support</h2>
-        </div>
+        <div class="section-header"><h2>Maintenance and support</h2></div>
         <div class="section-body">
           <div class="faq">
-            <div class="mini-box">
-              <h4>Basic maintenance</h4>
-              <div class="price" style="font-size:1.25rem;">From $80/month</div>
-            </div>
-            <div class="mini-box">
-              <h4>Standard support</h4>
-              <div class="price" style="font-size:1.25rem;">From $200/month</div>
-            </div>
-            <div class="mini-box">
-              <h4>Priority support</h4>
-              <div class="price" style="font-size:1.25rem;">From $500/month</div>
-            </div>
+            <div class="mini-box"><h4>Basic maintenance</h4><div class="price" style="font-size:1.25rem;">From $80/month</div></div>
+            <div class="mini-box"><h4>Standard support</h4><div class="price" style="font-size:1.25rem;">From $200/month</div></div>
+            <div class="mini-box"><h4>Priority support</h4><div class="price" style="font-size:1.25rem;">From $500/month</div></div>
           </div>
           <ul>
             <li>Bug fixing and technical support</li>
@@ -552,9 +214,7 @@
       </section>
 
       <section class="section" id="terms">
-        <div class="section-header">
-          <h2>Pricing terms</h2>
-        </div>
+        <div class="section-header"><h2>Pricing terms</h2></div>
         <div class="section-body">
           <ul>
             <li>Prices are starting prices in USD.</li>
@@ -564,36 +224,32 @@
             <li>Third-party services such as hosting, messages, and API usage are billed separately unless included in writing.</li>
             <li>All work includes standard testing, deployment support, and basic security implementation for the agreed scope.</li>
           </ul>
-          <div class="note">
-            The project includes a warranty period for bugs directly related to the delivered scope. New features, design changes, and additional changes are priced separately.
-          </div>
+          <div class="note">The project includes a warranty period for bugs directly related to the delivered scope. New features, design changes, and additional changes are priced separately.</div>
         </div>
       </section>
     </div>
 
     <div id="he" class="lang-panel">
       <section class="section">
-        <div class="section-header">
-          <h2>מחירון שירותי פיתוח תוכנה</h2>
-        </div>
+        <div class="section-header"><h2>מחירון פיתוח תוכנה</h2></div>
         <div class="section-body">
-          <p>פיתוח אפליקציות, פלטפורמות עסקיות, פורטלים ללקוחות, דשבורדים, אוטומציות, ופתרונות מותאמים אישית.</p>
+          <p>פיתוח אפליקציות, פלטפורמות עסקיות, פורטלים ללקוחות, לוחות בקרה, אוטומציות, ופתרונות מותאמים אישית.</p>
           <div class="price-grid">
-            <div class="card"><h3>פלטפורמת ניהול עסקית</h3><span class="price">מ-$2,500</span></div>
-            <div class="card"><h3>מערכת ניהול עובדים</h3><span class="price">מ-$1,500</span></div>
-            <div class="card"><h3>CRM</h3><span class="price">מ-$1,200</span></div>
-            <div class="card"><h3>פורטל לקוחות</h3><span class="price">מ-$1,500</span></div>
-            <div class="card"><h3>OCR ואוטומציה</h3><span class="price">מ-$800</span></div>
-            <div class="card"><h3>מעקב קורות חיים והגשות</h3><span class="price">מ-$900</span></div>
-            <div class="card"><h3>אפליקציית משפחה</h3><span class="price">מ-$800</span></div>
-            <div class="card"><h3>יישום מותאם אישית</h3><span class="price">מ-$1,500</span></div>
+            <div class="card"><span class="tag">עסקי</span><h3>פלטפורמת ניהול עסקית</h3><p>CRM, לקוחות, תהליכים, דשבורדים, מסמכים וניהול פנימי.</p><span class="price">מ-$2,500</span></div>
+            <div class="card"><span class="tag">כוח אדם</span><h3>מערכת ניהול עובדים</h3><p>עובדים, משימות, הרשאות, סטטוסים ותיאום תהליכים פנימיים.</p><span class="price">מ-$1,500</span></div>
+            <div class="card"><span class="tag">מכירות</span><h3>CRM</h3><p>לקוחות, הזדמנויות, פעילות, תקשורת ויחסי לקוחות.</p><span class="price">מ-$1,200</span></div>
+            <div class="card"><span class="tag">פורטלים</span><h3>פורטל לקוחות</h3><p>גישה מאובטחת למידע, מסמכים, בקשות ופרטים אישיים.</p><span class="price">מ-$1,500</span></div>
+            <div class="card"><span class="tag">אוטומציה</span><h3>OCR ואוטומציה מסמכים</h3><p>חילוץ נתונים ממסמכים וסריקות לזרימת עבודה דיגיטלית.</p><span class="price">מ-$800</span></div>
+            <div class="card"><span class="tag">קריירה</span><h3>מעקב קורות חיים והגשות</h3><p>ניהול קורות חיים, מעקב אחרי מקומות עבודה והגשות.</p><span class="price">מ-$900</span></div>
+            <div class="card"><span class="tag">משפחה</span><h3>אפליקציית משפחה</h3><p>משימות משותפות, תפריטים שבועיים, הוצאות והכנסות.</p><span class="price">מ-$800</span></div>
+            <div class="card"><span class="tag">מותאם</span><h3>יישום מותאם אישית</h3><p>פיתוח לפי תהליך עסקי ייחודי, משתמשים וכללים ספציפיים.</p><span class="price">מ-$1,500</span></div>
           </div>
           <ul>
             <li>פיתוח מלא</li>
             <li>ניהול משתמשים והרשאות</li>
             <li>אבטחה בסיסית</li>
-            <li>גיבויים</li>
-            <li>תמיכה ראשונית</li>
+            <li>גיבוי והגדרה</li>
+            <li>תחזוקה ותמיכה ראשונית</li>
           </ul>
         </div>
       </section>
@@ -601,20 +257,18 @@
 
     <div id="ru" class="lang-panel">
       <section class="section">
-        <div class="section-header">
-          <h2>Прайс-лист разработки программного обеспечения</h2>
-        </div>
+        <div class="section-header"><h2>Прайс-лист разработки программного обеспечения</h2></div>
         <div class="section-body">
-          <p>Разработка веб-приложений, бизнес-платформ, клиентских порталов, автоматизаций и индивидуальных решений.</p>
+          <p>Разработка веб-приложений, бизнес-платформ, клиентских порталов, дашбордов, OCR, автоматизаций и индивидуальных решений.</p>
           <div class="price-grid">
-            <div class="card"><h3>Бизнес-платформа</h3><span class="price">от $2,500</span></div>
-            <div class="card"><h3>Система управления персоналом</h3><span class="price">от $1,500</span></div>
-            <div class="card"><h3>CRM</h3><span class="price">от $1,200</span></div>
-            <div class="card"><h3>Клиентский портал</h3><span class="price">от $1,500</span></div>
-            <div class="card"><h3>OCR и автоматизация документов</h3><span class="price">от $800</span></div>
-            <div class="card"><h3>Трекер резюме и вакансий</h3><span class="price">от $900</span></div>
-            <div class="card"><h3>Семейное приложение</h3><span class="price">от $800</span></div>
-            <div class="card"><h3>Индивидуальное приложение</h3><span class="price">от $1,500</span></div>
+            <div class="card"><span class="tag">Бизнес</span><h3>Бизнес-платформа</h3><p>CRM, клиенты, процессы, дашборды, документы и внутренние операции.</p><span class="price">от $2,500</span></div>
+            <div class="card"><span class="tag">Персонал</span><h3>Система управления персоналом</h3><p>Сотрудники, задачи, права доступа и координация внутренних процессов.</p><span class="price">от $1,500</span></div>
+            <div class="card"><span class="tag">CRM</span><h3>CRM система</h3><p>Клиенты, сделки, активности, коммуникации и отношения с клиентами.</p><span class="price">от $1,200</span></div>
+            <div class="card"><span class="tag">Портал</span><h3>Клиентский портал</h3><p>Безопасный доступ клиентов к информации, документам и запросам.</p><span class="price">от $1,500</span></div>
+            <div class="card"><span class="tag">Автоматизация</span><h3>OCR и обработка документов</h3><p>Извлечение данных из документов и изображений для автоматизации.</p><span class="price">от $800</span></div>
+            <div class="card"><span class="tag">Карьера</span><h3>Трекер резюме и вакансий</h3><p>Учет резюме, мест работы и информации о каждой отправленной заявке.</p><span class="price">от $900</span></div>
+            <div class="card"><span class="tag">Семья</span><h3>Семейное приложение</h3><p>Общие задачи, планирование еды, учет доходов и расходов.</p><span class="price">от $800</span></div>
+            <div class="card"><span class="tag">Индивидуально</span><h3>Индивидуальное приложение</h3><p>Решение под конкретный бизнес-процесс, правила и пользователей.</p><span class="price">от $1,500</span></div>
           </div>
           <ul>
             <li>Полная разработка</li>
@@ -627,23 +281,17 @@
       </section>
     </div>
 
-    <div class="footer">
-      Arik Axmatov • Axmatov@gmail.com • Full-stack developer • Custom software solutions
-    </div>
+    <div class="footer">Arik Axmatov • Axmatov@gmail.com • Full-stack developer • Custom software solutions</div>
   </div>
 
   <script>
     const langButtons = document.querySelectorAll('.lang-btn');
     const panels = document.querySelectorAll('.lang-panel');
-
     langButtons.forEach((button) => {
       button.addEventListener('click', () => {
         const target = button.dataset.lang;
-
         langButtons.forEach((btn) => btn.classList.toggle('active', btn === button));
-        panels.forEach((panel) => {
-          panel.classList.toggle('active', panel.id === target);
-        });
+        panels.forEach((panel) => panel.classList.toggle('active', panel.id === target));
       });
     });
   </script>
